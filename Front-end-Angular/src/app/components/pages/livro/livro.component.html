@@ -1,0 +1,38 @@
+<div class="livro-box">
+  <div class="input-box d-flex flex-column flex-md-row align-items-center pb-3 mb-4">
+
+    <label for="procurar">Livro</label>
+    <input type="text" placeholder="Qual livro está buscando?">
+    <div>
+      <button>Inserir</button>
+    </div>
+  </div>
+</div>
+
+<table class="table">
+  <thead class="header border-bottom border-top">
+    <td>Lançamento</td>
+    <td>Título</td>
+    <td>Autor</td>
+    <td>Editora</td>
+    <td>Categoria</td>
+    <td></td>
+  </thead>
+  <tbody *ngFor="let livro of livros">
+    <tr>
+      <td>
+        <div class="lancamento" *ngIf="livro.ind_lancamento == 's'; else n"><p>Sim</p></div>
+        <ng-template #n><p>Não</p></ng-template>
+      </td>
+      <td>{{ livro.des_titulo }}</td>
+      <td>{{ livro.idt_autor }}</td>
+      <td>{{ livro.idt_editora }}</td>
+      <td>{{ livro.idt_categoria }}</td>
+      <td>
+        <button>Detalhes</button>
+        <button>Atualizar</button>
+        <button>Apagar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

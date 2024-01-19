@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-3">
+    <app-filtro></app-filtro>
+  </div>
+  <div class="col-md-9">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let livro of livros">
+        <app-livraria [livro]="livro"></app-livraria>
+      </div>
+    </div>
+  </div>
+</div>

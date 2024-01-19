@@ -1,0 +1,24 @@
+.card img {
+  height: 18rem;
+}
+
+.title {
+  height: 3.5rem;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.card-body .valor {
+  margin: 0.5rem 0px 0.5rem 0.4rem;
+  font-size: 18px;
+}
+
+.botao {
+  text-align: center;
+}
+
+.botao button {
+  height: 2.5rem;
+  width: 10rem;
+  font-size: 18px;
+}
