@@ -1,0 +1,21 @@
+.barra {
+  background-color: #a3a6ce;
+  padding: 0.6rem 1.5rem;
+  height: 4rem;
+  border-bottom: #909090;
+}
+
+nav a {
+  font-size: 20px;
+}
+
+.login {
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.login a {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+}
+
