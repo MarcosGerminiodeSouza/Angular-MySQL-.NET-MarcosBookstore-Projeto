@@ -1,5 +1,3 @@
-import { TitleStrategy } from "@angular/router"
-
 export interface LivroVendaModel {
   idt_livro_venda: number,
   idt_livro: number,
