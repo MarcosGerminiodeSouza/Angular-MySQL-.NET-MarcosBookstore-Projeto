@@ -5,7 +5,7 @@
     <h4 class="title">{{ livro.des_titulo }}</h4>
     <h4 class="valor">{{ livro.val_livro | currency: 'BRL' }}</h4>
     <div class="botao">
-      <button type="button" class="btn btn-primary">Comprar</button>
+      <button (click)="adicionarAoCarrinho(livro)" [disabled]="livro.qtd_livro_estoque <= 0" type="button" class="btn btn-primary">Adicionar ao Carrinho</button>
     </div>
   </div>
 </div>

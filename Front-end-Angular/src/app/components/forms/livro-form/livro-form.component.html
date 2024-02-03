@@ -1,0 +1,68 @@
+<div class="formulario">
+  <div class="card">
+    <div class="card-header"><h4>{{ tituloDinamico }}</h4></div>
+    <div class="card-body">
+      <form [formGroup]="livroForm" (ngSubmit)="submit()" #formDit="ngForm">
+        <input type="hidden" formControlName="idt_livro">
+        <div class="input-group">
+          <label for="tit" class="lab input-group-text">Título:</label>
+          <input id="tit" formControlName="des_titulo" type="text" class="form-control" placeholder="Por favor escrever o título..." required aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group input-group-sm">
+          <label class="input-group-text" for="lan">Lançamento:</label>
+          <select class="custom-select" formControlName="ind_lancamento" id="lan">
+            <option [value]="'s'">Sim</option>
+            <option [value]="'n'">Não</option>
+          </select>
+        </div>
+        <div class="input-group input-group-sm"> <!-- Trabalhando AQUI !!! -->
+          <label class="lab input-group-text" for="inputAut"> Autor: </label>
+          <select class="custom-select" id="inputAut" formControlName="idt_autor">
+            <option [value]="null">Selecionar um Autor</option>
+            <option *ngFor="let autor of autores" [value]="autor.idt_autor">{{ autor.nom_autor }}</option>
+          </select>
+        </div>
+        <div class="input-group input-group-sm">
+          <label class="lab input-group-text" for="inputEdi"> Editora: </label>
+          <select class="custom-select" id="inputEdi" formControlName="idt_editora">
+            <option [value]="null">Selecionar uma Editora</option>
+            <option *ngFor="let editora of editoras" [value]="editora.idt_editora">{{ editora.nom_editora }}</option>
+          </select>
+        </div>
+        <div class="input-group input-group-sm">
+          <label class="lab input-group-text" for="inputCat">Categoria: </label>
+          <select class="custom-select" id="inputCat" formControlName="idt_categoria">
+            <option [value]="null">Selecionar uma Categoria</option>
+            <option *ngFor="let categoria of categorias" [value]="categoria.idt_categoria">{{ categoria.des_categoria }}</option>
+          </select>
+        </div>
+        <div class="input-group input-group-sm">
+          <label for="imag" class="lab input-group-text">Imagem:</label>
+          <input input type="text" id="imag" class="form-control" formControlName="des_imagem" placeholder="img1" required aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm">
+          <label for="ano" class="lab input-group-text">Ano:</label>
+          <input type="number" id="ano" class="form-control" formControlName="num_ano" placeholder="Exemplo: 2015" required aria-label="Small" aria-describedby="inputGroup-sizing-sm" min="1800" max="2024">
+        </div>
+        <div class="input-group input-group-sm">
+          <label for="temp" class="input-group-text">Temporada:</label>
+          <input type="text" id="temp" class="form-control" formControlName="des_temporada" placeholder="Escreva a temporada do livro..." required aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm">
+          <label for="qtd" class="input-group-text">Quantidade:</label>
+          <input formControlName="qtd_livro_estoque" type="number" id="qtd" class="form-control" placeholder="Insira a quantidade" required aria-describedby="inputGroup-sizing-sm" min="1" >
+          <label for="qtd" class="input-group-text">Unidades.</label>
+        </div>
+        <div class="input-group input-group-sm">
+          <label for="val" class="input-group-text">Valor:</label>
+          <label for="val" class="input-group-text">R$</label>
+          <input type="number" id="val" formControlName="val_livro" placeholder="Exemplo: 49,99" required class="form-control" aria-describedby="inputGroup-sizing-sm" min="1">
+        </div>
+        <div class="btn-box">
+          <button type="submit" [disabled]="!livroForm.valid" class="btn btn-success">{{ btnDinamico }}</button>
+          <button type="button" class="btn btn-outline-secondary" [routerLink]="['/Livros']">Voltar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

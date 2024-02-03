@@ -1,0 +1,58 @@
+.formulario {
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  border: 1px solid #393939;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.card-header {
+  background-color: #b0b2da;
+  border-bottom: 1px solid #393939;
+  border-radius: 10px 10px 0px 0px;
+  padding-bottom: 0px;
+}
+
+.card-header h4 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+
+.card-body {
+  background-color: #ececec;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.input-group {
+  padding: 0px 1%;
+  margin-bottom: 8px;
+}
+
+.lab {
+  width: 5rem;
+}
+
+select {
+  border-radius: 0px 5px 5px 0px;
+  border: solid 1px #dfdddd;
+  width: 17rem;
+}
+
+#lan {
+  width: 16rem;
+}
+
+#qtd {
+  text-align: end;
+
+}
+
+.btn {
+  margin: 10px 1rem 0px;
+  width: 9rem;
+}

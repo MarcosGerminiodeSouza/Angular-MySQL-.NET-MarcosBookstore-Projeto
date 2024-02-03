@@ -1,28 +1,40 @@
-<div class="card">
-  <div class="card-header">
-    <h4>Filtros</h4>
-  </div>
-  <div class="card-body">
-      <form>
-        <div class="lancamentos form-group">
-          <input type="radio" name="lancamentos" id="lancamentos">
-          <label for="lancamentos">Lançamentos</label>
+<div class="row">
+  <div class="filtro">
+    <div class="card">
+      <div class="card-header">
+        <h4>Filtros</h4>
+      </div>
+      <div class="card-body">
+          <form [formGroup]="filtroForm">
+            <div class="lancamentos form-group">
+              <input (input)="Lancamentos()" formControlName="fil" value="lan" id="lan" type="radio">
+              <label for="lan">Lançamentos</label>
+            </div>
+            <div class="livro form-group">
+              <input (input)="ObterLivros()" formControlName="fil" value="liv" id="liv" type="radio">
+              <label for="liv" class="opt">Livro:</label>
+              <input (input)="LivroBusca($event)" [disabled]="filtroForm.get('fil')?.value != 'liv'" type="text" class="form-control">
+            </div>
+            <div class="autor form-group">
+              <input (input)="ObterLivros()" formControlName="fil" value="aut" id="aut" type="radio">
+              <label for="aut" class="opt">Autor:</label>
+              <input (input)="AutorBusca($event)" [disabled]="filtroForm.get('fil')?.value != 'aut'" type="text" class="form-control">
+            </div>
+            <div class="editora form-group">
+              <input (input)="ObterLivros()" formControlName="fil" value="edi" id="edi" type="radio">
+              <label for="edi" class="opt">Editora:</label>
+              <input (input)="EditoraBusca($event)" [disabled]="filtroForm.get('fil')?.value != 'edi'" type="text" class="form-control">
+            </div>
+          </form>
         </div>
-        <div class="livro form-group">
-          <input type="radio" name="radio-livro" id="radio-livro">
-          <label class="opt" for="livro">Livro:</label>
-          <input type="text" id="livro" class="form-control">
-        </div>
-        <div class="autor form-group">
-          <input type="radio" name="radio-autor" id="radio-autor">
-          <label class="opt" for="autor">Autor:</label>
-          <input type="text" id="autor" class="form-control">
-        </div>
-        <div class="editora form-group">
-          <input type="radio" name="radio-editora" id="radio-editora">
-          <label class="opt" for="editora">Editora:</label>
-          <input type="text" name="editora" id="editora" class="form-control">
-        </div>
-      </form>
     </div>
+  </div>
+
+  <div class="livraria-api">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let livro of livros">
+        <app-livraria [livro]="livro"></app-livraria>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { LivroModel } from 'src/app/components/models/livro.model';
 
 @Component({
@@ -11,9 +11,16 @@ export class LivrariaComponent implements OnInit {
   @Input()
   livro!: LivroModel;
 
+  @Output() adicionarCarrinho: EventEmitter<LivroModel> = new EventEmitter<LivroModel>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  adicionarAoCarrinho(livro: LivroModel): void {
+    console.log('livraria: enviando livro:', livro);
+    this.adicionarCarrinho.emit(livro);
   }
 
 }
