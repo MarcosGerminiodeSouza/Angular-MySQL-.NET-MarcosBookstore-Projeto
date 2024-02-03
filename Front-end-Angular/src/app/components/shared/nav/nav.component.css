@@ -1,21 +1,19 @@
-.barra {
-  background-color: #a3a6ce;
-  padding: 0.6rem 1.5rem;
-  height: 4rem;
-  border-bottom: #909090;
+nav {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #5f5f5f;
 }
 
-nav a {
-  font-size: 20px;
+.header {
+  padding: 0px 1%;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-.login {
-  border-radius: 10px;
-  background-color: #ffffff;
-}
-
-.login a {
-  font-family: 'Courier New', Courier, monospace;
+.nav {
+  margin-left: auto;
   font-size: 18px;
 }
 
+.usuario {
+  padding: 0px 5%;
+  font-size: 18px;
+}

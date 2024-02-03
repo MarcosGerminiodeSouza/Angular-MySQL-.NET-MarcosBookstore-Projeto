@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  titulo = 'Marcos Livraria';
+  nomeUsuario = 'Nome Usuário';
+
   constructor() { }
 
   ngOnInit(): void {
