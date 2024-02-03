@@ -1,0 +1,10 @@
+<dialog *ngIf="livroBanco" open>
+  <h3>Aviso : Exclusão Permanente</h3>
+  <div class="texto">
+    <p>Ao clicar em <span>Deletar</span>, o <span>Livro nº{{livroBanco.idt_livro}}</span>, intitulado "<span>{{livroBanco.des_titulo}}</span>" </p>
+    <p>será removido permanentemente do nosso Banco de Dados.</p>
+  </div>
+  <h5>Tem certeza de que deseja continuar?</h5>
+  <button (click)="Excluir(livroBanco.idt_livro!)" type="button" class="btn btn-danger"> Deletar </button>
+  <button [routerLink]="['/Livros']" type="button" class="btn btn-outline-secondary"> Cancelar </button>
+</dialog>

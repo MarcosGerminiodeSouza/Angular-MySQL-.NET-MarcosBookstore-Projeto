@@ -1,9 +1,37 @@
-.input-box {
-  font-weight: bold;
-  font-size: 20px;
+.superior {
+  width: 100%;
+  padding-top: 1rem;
 }
 
-thead td {
-  font-weight: bold;
-  font-size: 20px;
+.input-group {
+  width: 50%;
+  padding: 0px 5rem;
 }
+
+.input-group-prepend .input-group-text {
+  font-weight: bold;
+  border-radius: 6px 0px 0px 6px;
+}
+
+.inserir {
+  width: 50%;
+  text-align: center;
+}
+
+table {
+  width: 98%;
+  margin-left: 1%;
+  margin-top: 2rem;
+  border-top: solid rgb(164, 164, 164) 1px;
+}
+
+thead th {
+  font-size: 24px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+tbody th:hover {
+  color: #0032f8;
+  cursor: pointer;
+}
+

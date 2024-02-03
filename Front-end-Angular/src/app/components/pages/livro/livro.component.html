@@ -1,38 +1,43 @@
-<div class="livro-box">
-  <div class="input-box d-flex flex-column flex-md-row align-items-center pb-3 mb-4">
-
-    <label for="procurar">Livro</label>
-    <input type="text" placeholder="Qual livro está buscando?">
-    <div>
-      <button>Inserir</button>
+<div class="superior row">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Buscar Livro</span>
     </div>
+    <input (input)="Buscar($event)" type="text" class="form-control" placeholder="Qual livro está buscando?" aria-label="Username">
+  </div>
+  <div class="inserir">
+    <button [routerLink]="['/Livros/Inserir']" type="button" class="btn btn-success">Inserir Livro</button>
   </div>
 </div>
 
-<table class="table">
-  <thead class="header border-bottom border-top">
-    <td>Lançamento</td>
-    <td>Título</td>
-    <td>Autor</td>
-    <td>Editora</td>
-    <td>Categoria</td>
-    <td></td>
-  </thead>
-  <tbody *ngFor="let livro of livros">
+<table class="table table-striped">
+  <thead>
     <tr>
+      <th scope="col">#</th>
+      <th scope="col">Novo</th>
+      <th scope="col">Livro</th>
+      <th scope="col">Autor</th>
+      <th scope="col">Editora</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Apagar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let livro of livros">
+      <td>{{ livro.idt_livro }}</td>
       <td>
-        <div class="lancamento" *ngIf="livro.ind_lancamento == 's'; else n"><p>Sim</p></div>
+        <div *ngIf="livro.ind_lancamento == 's'; else n"><p>Sim</p></div>
         <ng-template #n><p>Não</p></ng-template>
       </td>
-      <td>{{ livro.des_titulo }}</td>
-      <td>{{ livro.idt_autor }}</td>
-      <td>{{ livro.idt_editora }}</td>
-      <td>{{ livro.idt_categoria }}</td>
-      <td>
-        <button>Detalhes</button>
-        <button>Atualizar</button>
-        <button>Apagar</button>
-      </td>
+      <th routerLink="/Livros/Detalhes/{{livro.idt_livro}}">{{ livro.des_titulo }}</th>
+      <td>{{ livro.autorNome }}</td>
+      <td>{{ livro.editoraNome }}</td>
+      <td>{{ livro.categoriaNome }}</td>
+      <td><button routerLink="/Livros/Editar/{{livro.idt_livro}}" type="button" class="btn btn-warning btn-sm">Editar</button></td>
+      <td><button routerLink="/Livros/Apagar/{{livro.idt_livro}}" type="button" class="btn btn-danger btn-sm">Apagar</button></td>
     </tr>
   </tbody>
 </table>
+
+<app-apagar></app-apagar>

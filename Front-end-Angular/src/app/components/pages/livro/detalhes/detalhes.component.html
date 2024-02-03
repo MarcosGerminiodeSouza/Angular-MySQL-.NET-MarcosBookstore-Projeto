@@ -1,0 +1,24 @@
+<div class="detalhes">
+  <div class="cards" *ngIf="livro">
+    <div class="livro card">
+      <img class="bd-placeholder-img card-img-top" src="{{ 'assets/images/' + livro.des_imagem + '.jpg' }}" />
+      <div class="card-body">
+        <h4 class="card-title">Livro #{{ livro.idt_livro }}</h4>
+        <button type="button" class="btn btn-outline-dark" [routerLink]="['/Livros']">Voltar</button>
+      </div>
+    </div>
+    <div class="conteudo card shadow-sm">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><h3> {{ livro.des_titulo }}</h3></li>
+        <li class="list-group-item" *ngIf="livro.ind_lancamento == 's';"><h5> Lançamento </h5></li>
+        <li class="ali list-group-item"><span>Autor: </span><h5>{{ autor?.nom_autor }}</h5></li>
+        <li class="ali list-group-item"><span>Editora: </span><h5>{{ editora?.nom_editora }}</h5></li>
+        <li class="ali list-group-item"><span>Temporada: </span><h5>{{ livro.des_temporada }}</h5></li>
+        <li class="ali list-group-item"><span>Categoria: </span><h5>{{ categoria?.des_categoria }}</h5></li>
+        <li class="ali list-group-item"><span class="num">Ano: </span><h5>{{ livro.num_ano }}</h5></li>
+        <li class="ali list-group-item"><span class="num">Valor: </span><h5>{{livro.val_livro | currency:'BRL'}}</h5></li>
+        <li class="ali list-group-item"><span>Quantidade: </span><h5>{{ livro.qtd_livro_estoque }} Unidades</h5></li>
+      </ul>
+    </div>
+  </div>
+</div>

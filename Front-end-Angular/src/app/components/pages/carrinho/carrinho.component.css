@@ -1,0 +1,116 @@
+.carrinho {
+  width: 100%;
+  display: flex;
+}
+
+.compras, .sub-total {
+  margin: 1.5rem 1rem 0px 0.6rem;
+}
+
+.compras {
+  width: 75%;
+  min-width: 45rem;
+  max-width: 60rem;
+}
+
+thead th {
+  font-size: 24px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+thead td {
+  color: #575757;
+  font-size: 15px;
+}
+
+thead td, td {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: end;
+}
+
+tbody th {
+  display: flex;
+}
+
+span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+tbody img {
+  height: 18rem;
+}
+
+tbody .card {
+  border-radius: 0px;
+  width: 100%;
+  border: none;
+  padding: 0px 1%;
+}
+
+tbody .card h6 {
+  padding-left: 6%;
+}
+
+.botao {
+  margin: 1.5rem 0px 0px 1rem;
+}
+
+.meu-btn {
+  padding: 1px;
+  border: solid 1px #000;
+  border-radius: 5px;
+}
+
+select, select:hover, section:focus {
+  border: 0px solid #fff;
+  outline: none;
+}
+
+.botao span {
+  font-size: 18px;
+  color: hsl(0, 0%, 58%);
+  font-weight: 200;
+  margin: 0px 3%;
+}
+
+a {
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #a00f0f;
+}
+
+.sub-total {
+  width: 25%;
+  min-width: 15rem;
+  max-width: 22rem;
+  height: 100%;
+}
+
+.compras table, .sub-card, .vazio {
+  box-shadow: 0 0 1em rgb( 0 0 0 / .3);
+}
+
+.sub-card, .vazio {
+  border-radius: 0px;
+  border: none;
+}
+
+.sub-total p {
+  font-size: 15px;
+  padding: 0px 0.8rem;
+}
+
+.sub-total h6 {
+  text-align: center;
+}
+
+.sub-total__btn {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.sub-total__btn .btn-warning {
+  margin-right: 4%;
+}

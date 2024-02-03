@@ -1,0 +1,3 @@
+<div *ngIf="livroBanco">
+  <app-livro-form (onSubmit)="EditarLivro($event)" [livroBanco]="livroBanco" [tituloDinamico]="tituloDinamico" [btnDinamico]="btnDinamico"></app-livro-form>
+</div>

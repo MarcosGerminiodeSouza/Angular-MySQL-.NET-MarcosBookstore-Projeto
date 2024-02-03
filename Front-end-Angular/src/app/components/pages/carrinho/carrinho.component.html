@@ -1,1 +1,73 @@
-<p>carrinho works!</p>
+<div class="carrinho">
+  <div class="compras" *ngIf="itens.length >= 1; else vazio">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Carrinho de Compras</th>
+          <td scope="col">Preço</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let livro of itens">
+          <th>
+            <!-- <img src="https://m.media-amazon.com/images/I/815iPX0SgkL._AC_AA180_.jpg" width="150px">
+              <img class="bd-placeholder-img card-img-top" src='{{ "assets/images/" + livro.des_imagem + ".jpg"}}'>
+              <img src='{{ "assets/images/" + livro.des_imagem + ".jpg"}}'>
+            -->
+            <img [src]="'assets/images/' + livro.des_imagem + '.jpg'" width="150px">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{ livro.des_titulo }}</h5>
+                <h6>por <span>Autor #{{ livro.idt_autor }}</span></h6>
+                <div class="botao">
+                  <button class="meu-btn btn btn-sm" for="qtd">Qtd:
+                    <select id="qtd" name="qtd">
+                      <option value="5">5</option>
+                      <option value="4">4</option>
+                      <option value="3">3</option>
+                      <option value="2">2</option>
+                      <option value="1">1</option>
+                    </select>
+                  </button>
+                  <span>|</span><a href="#">Excluir</a>
+                </div>
+              </div>
+            </div>
+          </th>
+          <td><span>R$ {{ livro.val_livro | currency: 'BRL' }}</span></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td></td>
+          <td>Subtotal ({{ itens.length }} produtos): <span>R$ {{ calcularSubtotal() | currency: 'BRL' }}</span></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="sub-total">
+    <div class="sub-card card">
+      <div class="card-body">
+        <p class="card-text text-success">Lembre-se de realizar o login para utilizar o carrinho e finalizar seu pedido.</p>
+        <h6 class="card-subtitle mb-2">Subtotal ({{ itens.length }} produtos): <span>R$ {{ calcularSubtotal() | currency: 'BRL' }}</span></h6>
+      </div>
+      <div class="sub-total__btn">
+        <button type="button" class="btn btn-warning">Finalizar Pedido</button>
+        <button type="button" class="btn btn-success">Relatório</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #vazio>
+  <div class="compras">
+    <div class="vazio card">
+      <div class="card-body">
+        <h3 class="card-title">Carrinho de Compras Vazio</h3>
+        <h6 class="card-subtitle">Adicione itens ao seu carrinho de compras...</h6>
+      </div>
+    </div>
+  </div>
+</ng-template>

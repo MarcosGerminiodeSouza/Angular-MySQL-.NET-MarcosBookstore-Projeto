@@ -1,0 +1,34 @@
+.card {
+  width: 25%;
+  margin: 10rem 40%;
+  text-align: center;
+}
+
+.card-header p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.card-body {
+  font-size: 1.1rem;
+}
+
+.card-body .form-group {
+  text-align: end;
+  margin-bottom: 10px;
+}
+
+input {
+  margin: 0px 5%;
+  width: 60%;
+}
+
+.botao {
+  margin-top: 10px;
+  text-align: end;
+}
+
+.botao a {
+  margin: 0px 5%;
+}
